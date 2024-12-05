@@ -30,7 +30,7 @@ const LobbyObsPage = () => {
     const [actions, setActions] = useState<Action[]>([]);
 
     useEffect(() => {
-        const newSocket = io('http://localhost:4000');
+        const newSocket = io('https://sock.mapban.csmplay.ru');
 
         newSocket.on('connect', () => {
             console.log('Connected to Socket.IO server');

@@ -41,7 +41,7 @@ export default function LobbyPage() {
     ];
 
     useEffect(() => {
-        const newSocket = io('http://localhost:4000');
+        const newSocket = io('https://sock.mapban.csmplay.ru');
 
         newSocket.on('connect', () => {
             console.log('Connected to Socket.IO server');
@@ -179,12 +179,12 @@ export default function LobbyPage() {
         router.push('/');
     };
 
-    // const handleCopyObsClick = () => {
-    //     const sampleText = `http://localhost:3000/lobby/${lobbyId}/obs`;
-    //     navigator.clipboard.writeText(sampleText)
-    //         .then(() => toast({description: "Ссылка для OBS скопирована в буфер обмена"}))
-    //         .catch(() => toast({description: "Не получилось :("}));
-    // };
+    const handleCopyObsClick = () => {
+        const sampleText = `https://mapban.csmplay.ru/lobby/${lobbyId}/obs`;
+        navigator.clipboard.writeText(sampleText)
+            .then(() => toast({description: "Ссылка для OBS скопирована в буфер обмена"}))
+            .catch(() => toast({description: "Не получилось :("}));
+    };
 
     const handleCopyCodeClick = () => {
         navigator.clipboard.writeText(`${lobbyId}`)

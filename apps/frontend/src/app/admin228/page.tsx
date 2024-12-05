@@ -29,11 +29,11 @@ export default function AdminPage() {
     const { toast } = useToast();
 
     useEffect(() => {
-        socketRef.current = io('http://localhost:4000');
+        socketRef.current = io('https://sock.mapban.csmplay.ru');
 
         const fetchLobbies = async () => {
             try {
-                const response = await fetch('http://localhost:4000/admin/lobbies');
+                const response = await fetch('https://sock.mapban.csmplay.ru/admin/lobbies');
                 const data: Lobby[] = await response.json();
                 setLobbies(data);
             } catch (error) {
@@ -68,7 +68,7 @@ export default function AdminPage() {
     };
 
     const handleCopyLink = (lobbyId: string) => {
-        const lobbyUrl = `http://localhost:3000/lobby/${lobbyId}/obs`;
+        const lobbyUrl = `https://mapban.csmplay.ru/lobby/${lobbyId}/obs`;
         navigator.clipboard.writeText(lobbyUrl).then(
             () => {
                 toast({
@@ -150,7 +150,7 @@ export default function AdminPage() {
                                     </Button>
                                     <Button onClick={() => handleCopyLink(lobby.lobbyId)} variant="outline" className="flex-1">
                                         <Eye className="w-4 h-4 mr-2" />
-                                        Copy Obs Link
+                                        Copy OBS Link
                                     </Button>
                                     <Button onClick={() => handleDeleteLobby(lobby.lobbyId)} variant="destructive" className="flex-1">
                                         <Trash2 className="w-4 h-4 mr-2" />
