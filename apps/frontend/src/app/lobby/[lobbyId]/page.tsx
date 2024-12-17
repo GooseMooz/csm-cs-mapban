@@ -19,13 +19,13 @@ export default function LobbyPage() {
     const [socket, setSocket] = useState<Socket | null>(null);
     const router = useRouter();
     const mapNames = [
-        "Nuke",
-        "Dust 2",
-        "Ancient",
-        "Inferno",
-        "Anubis",
-        "Vertigo",
-        "Mirage"
+        "Ascent",
+        "Bind",
+        "Breeze",
+        "Icebox",
+        "Lotus",
+        "Split",
+        "Sunset"
     ];
 
     // Overlay states
